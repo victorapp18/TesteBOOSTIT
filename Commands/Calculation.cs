@@ -6,28 +6,31 @@ namespace TesteBOOSTIT.Commands
 {
     public class Calculation : ICalculation
     {
-        public IEnumerable<Multiplos> GetDivisibilityEleven(Request Number)
+        public async Task<Multiplos> GetDivisibilityEleven(Request request)
         {
-            Multiplos result = new Multiplos();
-            foreach (var number in Number.Numbers)
+            List<Result> result = new List<Result>();   
+            foreach (var number in request.Numbers)
             {
                 if(check(number))
                 {
-                    result.Result.Add(new Result {
-                        Number = number,
+                    result.Add(new Result {
+                        number = number,
                         isMultiple = true
                     });
                 }
                 else
                 {
-                    result.Result.Add(new Result
+                    result.Add(new Result
                     {
-                        Number = number,
+                        number = number,
                         isMultiple = false
                     });
                 }
             }
-            return (IEnumerable<Multiplos>)result;
+
+            Multiplos multiplos = new Multiplos();
+            multiplos.Result = result;
+            return multiplos;
         }
 
         static bool check(long n)

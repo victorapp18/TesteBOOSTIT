@@ -6,6 +6,6 @@ namespace TesteBOOSTIT.Commands
 {
     public interface ICalculation
     {
-        IEnumerable<Multiplos> GetDivisibilityEleven(Request Number);
+        Task<Multiplos> GetDivisibilityEleven(Request Number);
     }
 }

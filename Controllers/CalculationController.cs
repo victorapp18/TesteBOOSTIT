@@ -18,11 +18,11 @@ namespace TesteBOOSTIT.Controllers
             _logger = logger;
         }
 
-        [HttpGet]
-        public IEnumerable<Multiplos> GetAsync()
+        [HttpPost]
+        public async Task<ActionResult<Multiplos>> GetAsync([FromBody]Request request)
         {
-            var data = _Calculation.GetDivisibilityEleven(null);
-            return data;
+            var data = await _Calculation.GetDivisibilityEleven(request);
+            return Ok(data);
         }
     }
 }

@@ -2,7 +2,7 @@
 {
     public class Result
     {
-        public int Number { get; set; }
+        public int? number { get; set; }
         public bool isMultiple { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿namespace TesteBOOSTIT.Model.Request
+﻿
+namespace TesteBOOSTIT.Model.Request
 
 {
     public class Request
